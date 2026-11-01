@@ -1,11 +1,11 @@
 """Anthropic provider implementation."""
 
-from ..base import BaseLLM
+from pr_review_agent.core.config import LLM_MODEL
+from pr_review_agent.llm.base import LLMProvider
 
-
-class AnthropicProvider(BaseLLM):
+class AnthropicProvider(LLMProvider):
     """Anthropic-backed LLM client."""
 
-    def generate(self, prompt: str, **kwargs):
+    def chat(self, messages, tools=None):
         """Generate a response using the Anthropic provider."""
         raise NotImplementedError

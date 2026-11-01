@@ -1,8 +1,12 @@
-"""App settings."""
+import os
+from pathlib import Path
 
+from dotenv import load_dotenv
 
-class Settings:
-    """Application configuration container."""
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+load_dotenv(PROJECT_ROOT / ".env")
 
-    def __init__(self, **kwargs):
-        self.__dict__.update(kwargs)
+DATA_DIR = PROJECT_ROOT / "data"
+
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "openai")
+LLM_MODEL = os.getenv("LLM_MODEL", "gpt-4o-mini")

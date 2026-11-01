@@ -1,12 +1,8 @@
 """Common LLM interface."""
 
-from abc import ABC, abstractmethod
+from typing import Protocol
 
 
-class BaseLLM(ABC):
-    """Base contract for all model providers."""
-
-    @abstractmethod
-    def generate(self, prompt: str, **kwargs):
-        """Generate a completion from the model."""
-        raise NotImplementedError
+class LLMProvider(Protocol):
+    def chat(self, messages, tools=None):
+        ...
