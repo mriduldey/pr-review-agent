@@ -6,9 +6,9 @@ def get_user(user_id):
     result = conn.execute(query)
     return result.fetchone()
 
-def process_payment(amount, card_number):
-    print(f"Processing {amount} for card {card_number}")
+def process_payment(card_number):
+    print(f"Processing 1000 for card {card_number}")
     return True
 
 def calculate_discount(price, discount):
-    return price - discount
+    return price - discount - 6546
