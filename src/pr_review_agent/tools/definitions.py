@@ -3,7 +3,7 @@ TOOLS = [
         "type": "function",
         "function": {
             "name": "read_file",
-            "description": "Read one sample file",
+            "description": "Read a file in the current review. For real PRs returns a diff patch, not full source.",
             "parameters": {
                 "type": "object",
                 "properties": {
@@ -17,7 +17,7 @@ TOOLS = [
         "type": "function",
         "function": {
             "name": "post_review_comment",
-            "description": "Save a simulated PR review comment",
+            "description": "Save a simulated review comment locally, not on GitHub",
             "parameters": {
                 "type": "object",
                 "properties": {
